@@ -1,7 +1,7 @@
-let express = require('express');
-let http =require('http');
-let path = require('path');
-let socketIO = require('socket.io');
+const express = require('express');
+const http =require('http');
+const path = require('path');
+const socketIO = require('socket.io');
 const {admin} = require('./utils/connect/connect-admin');
 var qdata;
 var pyio = require('socket.io-client')
