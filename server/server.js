@@ -2,7 +2,7 @@ const express = require('express');
 const http =require('http');
 const path = require('path');
 const socketIO = require('socket.io');
-const admin = require('./utils/connect/connect-admin');
+const {admin} = require('./utils/connect/connect-admin');
 var qdata;
 var pyio = require('socket.io-client')
 var socketC= pyio.connect('http://localhost:5000', { transports: ['websocket', 'polling'] });
