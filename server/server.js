@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const {admin} = require('./utils/connect/connect-admin');
 var qdata;
 var pyio = require('socket.io-client')
-var socketC= pyio.connect('http://localhost:5000', { transports: ['websocket', 'polling'] });
+var socketC= pyio.connect('http://10.146.205.231:1055', { transports: ['websocket', 'polling'] });
 var uid = 'Vv4QMQ9H70NM92cZwSgoPn8ys7z1';
 var uide = 'cogd9PbgzOd4bWmxbvWc8JC7SGK2';
 var uidc = 'tfUUcmiiUwSr28k9jYaHByX9dWe2';
