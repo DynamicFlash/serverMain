@@ -3,6 +3,9 @@
   <title>admin</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/theme-style.css" />
+   <link rel="stylesheet" href="./css/materialize.min.css" />
+  <script src=".js/materialize.min.js"></script>
 </head>
 <body>
 
@@ -11,30 +14,36 @@
     <h3 id=ad_min>Admin</h3>
     <input  type="email" placeholder="Email..." id="email" />
     <input  type="password" placeholder="Password..." id="password" />
-    <button onclick="login()">Login to Account</button>
+    <button style="waves-effect waves-light btn" onclick="login()">Login to Account</button>
   </div>
   
   <div id ="user_div">
 
-  <div id="newUser_div" class="main-div"> 
-    <button onclick="logout()" style="position: absolute; top: 0; left: 0; padding-top:10px;">Logout</button>
+  <div id="newUser_div" class=""> 
+    <button class="waves-effect waves-light btn"  onclick="logout()" style="position: absolute; top: 0; left: 0; margin:20px;">Logout</button>
+     <a  class="waves-effect waves-light btn"  style="position: absolute; top: 0; right: 0; margin:20px;" href="/alldep.html">Show All faculty </a>
+
+  <div class="row">
+      <div class="col s4 column" style="padding-top:100px;">
     <h3>Add new User</h3>
-    <a href="/alldep.html">Show All faculty </a>
+   
     <input type="email" placeholder="Email..." id="email_field" />
     <input type="password" placeholder="Password..." id="password_field" />
     <input type="text" placeholder="Display name" id="name_field"/>
     <input type="text" placeholder="Department" id="depart_field"/>
-    <button onclick="create()">Create</button>
+    <button class="waves-effect waves-light btn" style="margin-top: 20px;" onclick="create()">Create</button>
   </div>
+
   
-  <div>
+
+  <div class="col s4 column" style="padding-top:100px;">
      <h3>delete user</h3>
     <input type="text" placeholder="Display Name" id="dName" />
     <input type="text" placeholder="Department" id="dDepart" />
-    <button onclick="deleteUser()">delete</button>    
+    <button class="waves-effect waves-light btn" style="margin-top: 20px;" onclick="deleteUser()">delete</button>    
   </div>
 
-  <div>
+  <div class="col s4 column" style="padding-top:100px;">
      <h3>update user</h3>
     <input type="text" placeholder="Display Name" id="uName" />
     <input type="text" placeholder="Department" id="uDepart" />
@@ -42,8 +51,10 @@
     <input type="text" placeholder="date" id="uDate" />
     <input type="text" placeholder="which time" id="uTime" />
     <input type="text" placeholder="time" id="nTime" />
-    <button onclick="updateUser()">Update</button>    
+    <button class="waves-effect waves-light btn" style="margin-top: 20px;" onclick="updateUser()">Update</button>    
   </div>
+
+</div>
 
 
   </div>

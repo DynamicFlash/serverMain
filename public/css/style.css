@@ -6,17 +6,91 @@ body {
   font-size: 16px;
 }
 
+body {
+  width: 100wh;
+  height: 90vh;
+  color: #fff;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.btn{
+  
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+
 input, button {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
 }
 
+.main-container{
+    position: relative;
+    height: 100vh;
+
+}
+
+
+.admin-position{
+  
+  position:absolute;
+  left:0;
+  bottom:0;
+  padding :20px;
+}
+
+.admin-position a{
+      margin-right: 10px;
+}
 .main-div {
-  width: 20%;
-  margin: 0px auto;
-  margin-top: 150px;
-  padding: 20px;
-  display: none;
+  max-width:300px;
+  margin:0 auto;
+  padding-top:100px;
+
 }
 
  .loggedin-div {
@@ -37,6 +111,8 @@ input, button {
 }
 
 .main-div input {
+  color:#fff;
+  font-family:'Nunito', sans-serif;
   display: block;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -50,16 +126,20 @@ input, button {
   -moz-transition: 0.3s;
 }
 
+.main-div h3{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+
 .main-div input:focus {
   border: 1px solid #777;
 }
 
 .main-div button {
-  background: #5d8ffc;
-  color: #fff;
-  border: 1px solid #5d8ffc;
-  border-radius: 5px;
-  padding: 15px;
+
+  margin-bottom:15px;
   display: block;
   width: 100%;
   transition: 0.3s;
@@ -67,13 +147,29 @@ input, button {
   -moz-transition: 0.3s;
 }
 
+.main-div .input-field:focus{
+ 
+}
+
+
+.btn-container{
+      margin-top: 50px;
+}
+input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+  
+  border-bottom: 1px solid #e84875 !important;
+  -webkit-box-shadow: 0 1px 0 0 #e84875 !important;
+  box-shadow: 0 1px 0 0 #e84875 !important; 
+}
+
+input{
+  
+  font-family:'Nunito', sans-serif;
+}
+
 .loggedin-div button{
 
-  background: #5d8ffc;
-  color: #fff;
-  border: 1px solid #5d8ffc;
-  border-radius: 5px;
-  padding: 15px;
+  margin-bottom:0;
   display: block;
   width: 13%;
   transition: 0.3s;
@@ -136,4 +232,53 @@ input, button {
   font-size:18px;
 }
 
+
+.button-container-2{
+      text-align: center;
+
+}
+
+.button-container-1 button{
+  margin-right:10px;
+}
+
+
+.button-container-1{
+      text-align: center;
+
+}
+
+.button-container-2 button{
+  margin-right:10px;
+}
+
+.logout{
+    margin:20px;
+
+}
+
+.change{
+  margin:20px;
+
+}
+
+.logout-container{
+      padding-top: 100px;
+}
+
+.column h3{
+  text-transform:uppercase;
+}
+
+.column{
+  padding-top:100px;
+}
+
+.button-container-1 .big-button{
+    padding: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    padding-top:100px;
+}
 

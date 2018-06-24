@@ -35,7 +35,7 @@ var trick = await dataByName(name,getFile(depart[j]),depart[j],month,socket,db);
 
 var dataByName = async function(name,filename,depart,month,socket,db){
   var d= db
-  console.log(d)
+  //console.log(d)
   fs.readFile(filename ,'utf8' ,(err, data) => {
     
     if(err){
@@ -55,6 +55,7 @@ var dataByName = async function(name,filename,depart,month,socket,db){
                     querySnapshot.forEach(function(doc) {
                     dataDb[doc.id]=doc.data() 
                       })
+                    console.log(dataDb)
                 socket.emit('mData',dataDb)
                   }).catch((err)=>{console.log(err)});
 

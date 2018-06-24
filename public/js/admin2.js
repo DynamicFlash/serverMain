@@ -36,7 +36,7 @@ socket.on('gotFac',function(data){
     document.getElementById("depart_div").style.display = "block";
     datau = data;
     for(var i = 1 ;i<data.length;i++){
-    var $input = $(`<input type="button" id ="${datau[i].name}" onClick="getData(datau[${i}].name)" value="${data[i].name}" />`);
+    var $input = $(`<div class="col s6"><input class="waves-effect waves-light btn" type="button" id ="${datau[i].name}" onClick="getData(datau[${i}].name)" value="${data[i].name}" /></div>`);
         //var data[i].name = `${data[i].name}`
         $input.appendTo($("#depart_div"));
     }

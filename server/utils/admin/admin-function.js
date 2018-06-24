@@ -37,6 +37,7 @@ var userRecord = await admin.auth().createUser({
 					 name : `${userRecord.displayName}`,
            depart : `${user.depart}`}
   console.log(data);
+  //Promise.resolve(socket.emit('piReg',JSON.stringify(data)));
 	Promise.resolve(socketC.emit('piReg',JSON.stringify(data)));
 }
 

@@ -36,6 +36,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
+    document.getElementById("loggedin-div").style.display = "block";
 
     user = firebase.auth().currentUser;
 
@@ -57,6 +58,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
+    document.getElementById("loggedin-div").style.display = "none";
 
   }
 });

@@ -3,40 +3,60 @@
   <title>Login</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
+
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+     <link rel="stylesheet" href="./css/materialize.min.css" />
+  <script src=".js/materialize.min.js"></script>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
 </head>
 <body>
 
-  <div id="login_div" class="main-div">
+  <div class="main-container" id="login_div" >
+
+  <div class="container">
+
+  <div class="main-div">
     <h3>Login</h3>
-    <input name="email" type="email" placeholder="Email..." id="email_field" />
-    <input name="password" type="password" placeholder="Password..." id="password_field" />
-    <button onclick="login()">Login to Account</button>
-    <button onclick="expand2()">password reset</button>
-    <a href="/admin.html">Admin</a>
-    <a href="/dadmin.html">Department Admin</a>
+    <input name="email" type="email" placeholder="Email..." id="email_field" class="input-fields" />
+    <input name="password" type="password" placeholder="Password..." id="password_field" class="input-fields" />
+	
+  <div class="btn-container">
+    <button class="waves-effect waves-light btn" onclick="login()">Login to Account</button>
+    <button class="waves-effect waves-light btn" onclick="expand2()">password reset</button>
+  </div>
+    
   </div>
 
-  <div id = 'resetE_div' style="display : none">
+<div class="admin-position">
+  <a class="waves-effect waves-light btn" href="/admin.html">Admin</a>
+  <a class="waves-effect waves-light btn" href="/dadmin.html">Department Admin</a>
+</div>
+
+</div>
+
+</div>
+<!-- 
+  <div id = 'resetE_div'>
   <p>Type email</p>
   <input name="Email" type="email" placeholder="email" id="new_pass_email" />
   <button onclick="change2()">change</button>
-</div>
+</div> -->
+<div class="admin-login" id="user_div">
 
-
-  <div class="main-div" id="signup_div">
+<!--   <div class="" id="signup_div">
     <h3 id="signupname">Admin</h3>
-    <p id="user_para">Your username will be processed Short</p>
-  </div>
+    <p id="user_para">Your username will be processed Short</p> -->
 
-  <div id="user_div" class="loggedin-div" style="margin-top:0;position: relative;padding-top:100px;">
+
+ 
+<div class="container-fluid" >
+  <div id="loggedin-div" class="loggedin-div" style="margin-top:0;position: relative;padding-top:100px;">
 <!--     <h3>Welcome India</h3>
     <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p> -->
     
 <div class="logout-container" >
-  <button onclick="logout()" style="position: absolute; top: 0; left: 0; padding-top:10px;">Logout</button>
-  <button onclick ="expand()"style="position: absolute; top: 0; right: 0; padding-top:10px;">Change Password</button>
+  <button onclick="logout()" class="waves-effect waves-light btn logout" style="position: absolute; top: 0; left: 0;">Logout</button>
+  <button onclick ="expand()" class="waves-effect waves-light btn change" style="position: absolute; top: 0; right: 0;">Change Password</button>
 </div>
 <div id = 'reset_div' style="display : none">
   <p>Are you sure?type Yes if so</p>
@@ -44,23 +64,27 @@
   <button onclick="change()">change</button>
 </div>
 <div class="button-container-1" style="padding-bottom: 30px;">
-    <button onclick="month('january')" class="w3-btn w3-black w3-wide" style="display:inline-block;">January</button>
-    <button onclick="month('february')" class="w3-btn w3-black w3-wide" style="display:inline-block;">February</button>
-    <button onclick="month('march')" class="w3-btn w3-black w3-wide" style="display:inline-block;">March</button>
-    <button onclick="month('april')" class="w3-btn w3-black w3-wide" style="display:inline-block;">April</button>
-    <button onclick="month('may')" class="w3-btn w3-black w3-wide" style="display:inline-block;">May</button>
-    <button onclick="month('june')" class="w3-btn w3-black w3-wide" style="display:inline-block;">June</button>
+    <button onclick="month('january')" class="waves-effect waves-light btn" style="display:inline-block;">January</button>
+    <button onclick="month('february')" class="waves-effect waves-light btn" style="display:inline-block;">February</button>
+    <button onclick="month('march')" class="waves-effect waves-light btn" style="display:inline-block;">March</button>
+    <button onclick="month('april')" class="waves-effect waves-light btn" style="display:inline-block;">April</button>
+    <button onclick="month('may')" class="waves-effect waves-light btn" style="display:inline-block;">May</button>
+    <button onclick="month('june')" class="waves-effect waves-light btn" style="display:inline-block;">June</button>
 </div>
 <div class="button-container-2" style="padding-bottom: 30px;">
-    <button onclick="month('july')" class="w3-btn w3-black w3-wide" style="display:inline-block;">July</button>
-    <button onclick="month('august')" class="w3-btn w3-black w3-wide" style="display:inline-block;">August</button>
-    <button onclick="month('september')" class="w3-btn w3-black w3-wide" style="display:inline-block;">September</button>
-    <button onclick="month('october')" class="w3-btn w3-black w3-wide" style="display:inline-block;">October</button>
-    <button onclick="month('november')" class="w3-btn w3-black w3-wide" style="display:inline-block;">November</button>
-    <button onclick="month('december')" class="w3-btn w3-black w3-wide" style="display:inline-block;">December</button>
+    <button onclick="month('july')" class="waves-effect waves-light btn" style="display:inline-block;">July</button>
+    <button onclick="month('august')" class="waves-effect waves-light btn" style="display:inline-block;">August</button>
+    <button onclick="month('september')" class="waves-effect waves-light btn" style="display:inline-block;">September</button>
+    <button onclick="month('october')" class="waves-effect waves-light btn" style="display:inline-block;">October</button>
+    <button onclick="month('november')" class="waves-effect waves-light btn" style="display:inline-block;">November</button>
+    <button onclick="month('december')" class="waves-effect waves-light btn" style="display:inline-block;">December</button>
 </div>
 
   </div>
+
+</div>
+</div>
+</div>
 
 
 <script src="/socket.io/socket.io.js"></script>
