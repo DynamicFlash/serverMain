@@ -282,3 +282,6 @@ input{
     padding-top:100px;
 }
 
+table {
+    border: 1px solid black;
+}

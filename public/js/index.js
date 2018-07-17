@@ -106,6 +106,9 @@ if(pass=='yes')
 
 function expand2(){
   document.getElementById('resetE_div').style.display = "block";
+      document.getElementById("user_div").style.display = "none";
+    document.getElementById("login_div").style.display = "none";
+    document.getElementById("loggedin-div").style.display = "none";
   
 }
 

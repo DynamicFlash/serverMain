@@ -3,7 +3,7 @@ const {admin} = require('./../connect/connect-admin');
 const {toDate,getMon} = require('./functions');
 
 
-var writeDb = async function(socket,data){
+var writeDb = async function(socket,data,socketC){
 console.log(data);
 var thresh1 = toDate("11:45:00");
 var thresh2 = toDate("14:45:00");
@@ -16,18 +16,18 @@ var ref,stat=true;
 			// var setDoc = await db.collection(data.C[i]).doc(data.C[i].uid).collection(getMon(data[0].month)).doc(`${data.A.date}`).set({mtime :`${data.C[i].time}`}).catch((err)=>{stat=false});
 			// console.log(" I am from the morning loop ",`${getMon(data[0].month)} : ${data[0].date}: time :${data[i].time}`);
 				// }
-			writeM(data, socket).catch((err)=>{
+			writeM(data, socket,socketC).catch((err)=>{
 				console.log(err);
 			});
 
 			}
 			else if(thresh1.getTime()<ref.getTime() && ref.getTime()<thresh2.getTime()){
-			writeA(data, socket).catch((err)=>{
+			writeA(data, socket,socketC).catch((err)=>{
 				console.log(err);
 			});
 			}
 			else if(ref.getTime()>thresh3.getTime()){
-			writeE(data, socket).catch((err)=>{
+			writeE(data, socket,socketC).catch((err)=>{
 				console.log(err);
 			});
 			//var setDoc = await db.collection('users').doc(data[i].name).collection(getMon(data[0].month)).doc(`${data[0].date}`).update({etime :`${data[i].time}`}).catch((err)=>{stat=false});
@@ -69,7 +69,7 @@ module.exports = {writeDb};
 // 		]
 
 
-var writeM= async function(data,socket){
+var writeM= async function(data,socket,socketC){
 
 
 for(var i =0;i<data.C.length;i++){
@@ -107,10 +107,10 @@ for(var i =0;i<data.M.length;i++){
 	console.log(" I am from the morning loop ",`UID : ${data.M[i].uid}(${getMon(data.A.month)} : ${data.A.date}: time :${data.M[i].time})`);			
 		}
 	}
-	socket.emit('serverStatus',{status : 'true'});
+	socketC.emit('serverStatus',{status : 'true'});
 }
 
-var writeA= async function(data,socket){
+var writeA= async function(data,socket,socketC){
 
 
 for(var i =0;i<data.C.length;i++){
@@ -145,10 +145,10 @@ for(var i =0;i<data.M.length;i++){
 		continue;
 		}
 	}
-	socket.emit('serverStatus',{status : 'true'});
+	socketC.emit('serverStatus',{status : 'true'});
 }
 
-var writeA= async function(data,socket){
+var writeA= async function(data,socket,socketC){
 
 
 for(var i =0;i<data.C.length;i++){
@@ -183,11 +183,11 @@ for(var i =0;i<data.M.length;i++){
 		continue;
 		}
 	}
-	socket.emit('serverStatus',{status : 'true'});
+	socketC.emit('serverStatus',{status : 'true'});
 }
 
 
-var writeE= async function(data,socket){
+var writeE= async function(data,socket,socketC){
 
 
 for(var i =0;i<data.C.length;i++){
@@ -222,7 +222,7 @@ for(var i =0;i<data.M.length;i++){
 		continue;
 		}
 	}
-	socket.emit('serverStatus',{status : 'true'});
+	socketC.emit('serverStatus',{status : 'true'});
 }
 
 
@@ -242,13 +242,13 @@ for(var i =0;i<data.M.length;i++){
 // 		  {uid : 'Js5CyWMhrfO2nsXtW22peZazo2w1',
 // 		  time: '08:16:00'},
 // 		  {uid : 'NKKkGVFungf24CMnv8zGKjFChS83',
-// 		  time: '09:07:00'},
+// 		  time: 'late'},
 // 		  ],
 // 	C :[{uid : '8Ez32ldV0oY52HqXWsdyQ4Ykfkm1',
 // 		  time: '08:15:00'},
 // 		  {uid : 'gjDUXynRARPb3KMyUKkphrjkKke2',
-// 		  time: '09:16:00'},
+// 		  time: 'late'},
 // 		  {uid : 'lAf5YWZbyhb1fJDBZ7ZsUgSHeni1',
-// 		  time: '09:05:00'},
+// 		  time: '08:05:00'},
 // 		  ]
 // 	}

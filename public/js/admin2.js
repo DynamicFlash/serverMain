@@ -1,5 +1,5 @@
 const socket = io();
-var uid,datau,fac;
+var uid,datau,fac,dime;
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -69,6 +69,25 @@ function month(mon){
 }
 
 socket.on('mData',function(data){
+  dime = data;
+  $('#tablediv').empty()
+  var html = '<table><thead><tr><th>Day</th><th>Morning</th><th>Afternoon</th><th>Evening</th></thead><tbody>';
+for (var key in dime) { 
+
+    if (dime.hasOwnProperty(key)){
+      //console.log(key);
+      html +='<tr>'+'<td>'+ key+'</td>';
+
+      for(var key1 in dime[key]){
+        html +='<td>'+dime[key][key1]+'</td>'
+      }
+
+      html += "</tr>";
+    }
+
+}
+html += '</tbody><tfoot><tr>....</tr></tfoot></table>';
+$(html).appendTo('#tablediv');
   console.log(data);
 });
 
